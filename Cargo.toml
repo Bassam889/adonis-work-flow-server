@@ -1,0 +1,29 @@
+[package]
+name = "rust_server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"]  }
+# Serde / json
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+serde_with = "3"
+# Axum
+axum = {version = "0.6.1", features = ["macros", "headers"] }
+tower-http = { version = "0.4.0", features = ["fs", "cors"] }
+# SeaORM
+sea-orm = { version = "0.12", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros" ] }
+# Dotenvy
+dotenvy = "0.15.7"
+# Dotenvy_macro
+dotenvy_macro = "0.15.7"
+jsonwebtoken = "9.2.0"
+bcrypt = "0.15.0"
+chrono = "0.4"
+validator = { version = "0.16.0", features = ["derive"] }
+[dev_dependencies]
+anyhow = "1"
+httpc-test = "0.1.7"
